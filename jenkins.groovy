@@ -27,12 +27,12 @@ pipeline {
         }
          stage('docker-build'){ //Here we will write dockerfile which will get converted into the image 
             steps{
-                sh 'docker build -t ayushshaha1008/ginger-reservation:latest .'
+                sh 'docker build -t ayushshaha1008/ginger-reservation-app:latest .'
             }
          }
          stage('docker-push'){ //Here the created image will get pushed to the dockerhub 
             steps{
-                sh 'docker push ayushshaha1008/ginger-reservation:latest'
+                sh 'docker push ayushshaha1008/ginger-reservation:latest-app'
             }
          }
          stage('Deploy'){ //Here all the yaml file that are specified in the yaml folder will get executed 
