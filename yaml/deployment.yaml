@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: ginger-reservation-app
-        image: ayushshaha1008/ginger-reservation-app:latest
+        image: image: ayushshaha1008/ginger-reservation:latest
+
         resources:
           limits:
             memory: "128Mi"
