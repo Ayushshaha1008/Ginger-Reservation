@@ -5,10 +5,10 @@ metadata:
   labels:
     app: ginger-reservation-app
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: ginger-reservation-app
-  replicas: 2
   strategy:
     type: Recreate
   template:
@@ -17,12 +17,11 @@ spec:
         app: ginger-reservation-app
     spec:
       containers:
-      - name: ginger-reservation-app
-        image: image: ayushshaha1008/ginger-reservation:latest
-
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8080
+        - name: ginger-reservation-app
+          image: ayushshaha1008/ginger-reservation:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
